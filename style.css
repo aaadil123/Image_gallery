@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sometype+Mono:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     /* if we add border and padding then size of box remains same and content shrinks*/
+    font-family: Poppins, sans-serif;
+}
+
+body{
+    background-color: #030303;
+    background: radial-gradient(circle, hsla(202, 27%, 45%, 1) 0%, hsla(0, 0%, 0%, 1) 90%);
+}
+
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto; /* center */
+    padding: 20px;
+}
+
+.container h1{
+    margin: 20px;
+    text-align: center;
+    font-size: 6rem;
+    line-height: 160px;
+    font-family: Poppins, sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+
+.images{
+    display: flex;
+    flex-wrap: wrap; /*if not all images are in one row*/
+    justify-content: space-between;
+}
+
+.cards{
+    width: 32%;  /* card not image, iamge is overflowed*/
+    position: relative; /* to make image1 text overlap on image, nearest ancestor should be non static*/
+    border-radius: 10px;
+    border-radius: 25% 10%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.cards img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);    /* image color changes to black and white*/
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+
+.cards:hover{
+    transform: scale(1.03);
+    transition: 0.1s;
+    filter: drop-shadow(0 0 10px #333);
+}
+
+img:hover{
+    filter: grayscale(0%);
+}
+
+.cards figcaption{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 25px;
+    height: 19%;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+}
+
+.cards:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+}
