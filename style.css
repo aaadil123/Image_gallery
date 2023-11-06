@@ -26,7 +26,7 @@ body{
 }
 
 .container h1{
-    margin: 20px auto;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 6rem;
     line-height: 160px;
